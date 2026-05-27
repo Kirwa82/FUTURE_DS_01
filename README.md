@@ -1,19 +1,29 @@
 # Superstore Corporate Performance Suite
 
-A Streamlit-based interactive dashboard for exploratory data analysis on the Superstore dataset.
+An interactive Streamlit dashboard for analyzing the Superstore sales dataset.
 
-## Project Overview
+## Project Summary
 
-This app reads `superstore.csv`, prepares sales and profit metrics, and renders a multi-tab dashboard with:
+This repository contains:
+- `app.py` — the Streamlit dashboard application
+- `superstore.csv` — the data source used for sales, profit, and customer analysis
+- `README.md` — setup and usage instructions
+
+The dashboard provides a multi-tab user interface with:
 - Overview & KPIs
 - Sales & Profit Analysis
 - Customer Analysis
 - Geographic Analysis
 - Insights & Recommendations
 
-The dashboard includes filters for year, region, category, and segment, and supports downloading filtered data.
+## Features
 
-## Installation
+- Filter data by year, region, category, and segment
+- Automatically treat empty filter selections as full-data selection
+- Display executive-level KPIs and visual analysis charts
+- Download filtered results as CSV
+
+## Setup
 
 1. Create a Python virtual environment:
 
@@ -38,13 +48,19 @@ python -m venv .venv
 pip install streamlit pandas plotly
 ```
 
-## Running the App
+## Run the Dashboard
 
 ```bash
 streamlit run app.py
 ```
 
+Then open the local URL shown in the terminal.
+
+## Data
+
+`superstore.csv` is included in the project root so the app can run immediately after dependency installation.
+
 ## Notes
 
-- The app expects `superstore.csv` to be present in the project root.
-- Filters are initialized blank, but empty filter selections still apply to all data.
+- If filters are cleared, the dashboard still works over the full dataset.
+- Ensure the CSV file remains in the same folder as `app.py`.
