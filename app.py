@@ -334,10 +334,10 @@ if st.sidebar.button("Clear Filter Selection"):
     st.session_state['category_filter'] = []
     st.session_state['segment_filter'] = []
 
-selected_years = st.sidebar.multiselect("Filter Calendar Year", options=default_years, default=st.session_state['year_filter'], key="year_filter")
-selected_regions = st.sidebar.multiselect("Filter Geographic Region", options=default_regions, default=st.session_state['region_filter'], key="region_filter")
-selected_categories = st.sidebar.multiselect("Filter Product Category", options=default_categories, default=st.session_state['category_filter'], key="category_filter")
-selected_segments = st.sidebar.multiselect("Filter Account Segment", options=default_segments, default=st.session_state['segment_filter'], key="segment_filter")
+selected_years = st.sidebar.multiselect("Filter Calendar Year", options=default_years, key="year_filter")
+selected_regions = st.sidebar.multiselect("Filter Geographic Region", options=default_regions, key="region_filter")
+selected_categories = st.sidebar.multiselect("Filter Product Category", options=default_categories, key="category_filter")
+selected_segments = st.sidebar.multiselect("Filter Account Segment", options=default_segments, key="segment_filter")
 
 # Compute dynamic analytical data state
 filtered_df = filter_data(df, selected_years, selected_regions, selected_categories, selected_segments)
